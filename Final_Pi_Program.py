@@ -1,4 +1,4 @@
-#The PIano
+###PIano
 #Group Members: Brenden Hohenstein, Alvin Kie, Frankie Lavall
 #Date:12/2/20-3/2/21
 #Description: Creates a program that turns the PI into a small piano or keyboard.
@@ -7,8 +7,11 @@ from tkinter import *
 import pygame
 
 pygame.init()
+Piano = [pygame.mixer.Sound("Piano.ff.A0.aiff")]
+Keyboard = []
 
-sounds = [pygame.mixer.Sound("Piano.ff.A0.aiff")]
+sounds = Piano
+
 
 #Main GUI
 class MainGUI(Frame):
@@ -21,18 +24,21 @@ class MainGUI(Frame):
     def setupGUI(self):
 
         #The Main Menu###########################################################
-        self.button1 = Button(self.parent, text = "QUIT",fg="red",command = quit)
-        self.button1.grid(row=0,column=12,sticky=N+W+S+E)
-        self.button2 = Button(self.parent, text = "Piano", fg="green")
-        self.button2.grid(row=0,column=1,sticky=N+S+E+W)
-        self.button3 = Button(self.parent, text = "Keyboard", fg="blue")
-        self.button3.grid(row=0,column=2,sticky=N+S+E+W)
+        menu = Menu(self.master)
+        self.master.config(menu=menu)
+
+        IMenu = Menu(menu)
+        IMenu.add_command(label="Piano", command = (sounds == Piano))
+        IMenu.add_command(label="Keyboard", command = (sounds == Keyboard))
+        menu.add_cascade(label="Instruments", menu= IMenu)
+
+        
         #########################################################################
         
         #The Piano Keys################################################################################################
         #the ipadx and ipady control how big the keys are, these will probably need to be tested and changed for the PI's screen.
         #White Keys:
-        self.key1 = Button(self.parent, bg="white",command = sounds[1].play())
+        self.key1 = Button(self.parent, bg="white",command = sounds[0].play()) #Need to figure out a way to make it stop playing when not pressed
         self.key1.grid(row=1,column=1,ipadx=40,ipady=125)
 
         self.key3 = Button(self.parent, bg="white")
@@ -90,15 +96,17 @@ class MainGUI(Frame):
 
         #The default songs#####################################################################
         def stars(): #Plays "twinkle twinkle little star"
-            pass
+            self.key1.invoke()
         def lambs(): #Plays "mary had a little lamb"
-            pass
+            self.key1.invoke()
 
         self.button4 = Button(self.parent, text = "Stars", fg="teal",command= stars)
-        self.button4.grid(row=0,column=3,sticky=N+S+E+W)
+        self.button4.grid(row=0,column=1,sticky=N+S+E+W)
         self.button5 = Button(self.parent, text = "Mary", fg="purple",command= stars)
-        self.button5.grid(row=0,column=4,sticky=N+S+E+W)
+        self.button5.grid(row=0,column=2,sticky=N+S+E+W)
         #######################################################################################
+
+
 
 ###Main Program
 #Creates the window
