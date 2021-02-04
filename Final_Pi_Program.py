@@ -4,9 +4,9 @@
 #Description: Creates a program that turns the PI into a small piano or keyboard.
 
 from tkinter import *
-#import pygame
+import pygame
 
-#pygame.init()
+pygame.init()
 Piano = [pygame.mixer.Sound("Piano.ff.A0.aiff")]
 Keyboard = []
 
