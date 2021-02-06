@@ -8,7 +8,9 @@ import pygame
 from time import sleep
 
 pygame.init()
-Piano = [pygame.mixer.Sound("Piano.ff.A0.aiff"),pygame.mixer.Sound("Piano.ff.C2.aiff"),pygame.mixer.Sound("Piano.mf.Eb2.aiff")]
+Piano = [pygame.mixer.Sound("Piano.ff.C2.aiff"),pygame.mixer.Sound("Piano.mf.Ab1.aiff")
+         ,pygame.mixer.Sound("Piano.mf.Eb2.aiff"),pygame.mixer.Sound("Piano.ff.F1.aiff")
+         ,pygame.mixer.Sound("Piano.pp.C3.aiff")]
 Keyboard = []
 
 sounds = Piano
@@ -49,13 +51,13 @@ class MainGUI(Frame):
         self.key1 = Button(self.parent, bg="white",command = lambda: sounds[0].play())
         self.key1.grid(row=1,column=1,ipadx=15,ipady=100)
 
-        self.key3 = Button(self.parent, bg="white",command = lambda: sounds[1].play())
+        self.key3 = Button(self.parent, bg="white",command = lambda: sounds[2].play())
         self.key3.grid(row=1,column=2,ipadx=15,ipady=100)
 
-        self.key4 = Button(self.parent, bg="white",command = lambda: sounds[1].play())
+        self.key4 = Button(self.parent, bg="white",command = lambda: sounds[3].play())
         self.key4.grid(row=1,column=3,ipadx=15,ipady=100)
 
-        self.key6 = Button(self.parent, bg="white",command = lambda: sounds[1].play())
+        self.key6 = Button(self.parent, bg="white",command = lambda: sounds[4].play())
         self.key6.grid(row=1,column=4,ipadx=15,ipady=100)
 
         self.key7 = Button(self.parent, bg="white")
@@ -83,7 +85,7 @@ class MainGUI(Frame):
         self.key17.grid(row=1,column=12,ipadx=15,ipady=100)
 
         #Black Keys;
-        self.key2 = Button(self.parent, bg="black")
+        self.key2 = Button(self.parent, bg="black", command = lambda: sounds[1].play())
         self.key2.grid(row=1,column=1,columnspan=2,ipadx=15,ipady=55,sticky= N)
     
         self.key5 = Button(self.parent, bg="black")
@@ -129,4 +131,3 @@ window.title("PIano")
 #Generates the GUI
 P = MainGUI(window)
 window.mainloop()
-
