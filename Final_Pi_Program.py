@@ -19,6 +19,7 @@ Piano = [pygame.mixer.Sound("Piano.ff.C2.aiff"),pygame.mixer.Sound("Piano.mf.Eb2
         ,pygame.mixer.Sound("Piano.ff.Bb2.aiff"),pygame.mixer.Sound("Piano.mf.Ab3.aiff")
         ,pygame.mixer.Sound("Piano.ff.Bb4.aiff"),pygame.mixer.Sound("Piano.mf.Bb5.aiff")]
 Keyboard = []
+Strings = [] #Violin and Guitar
 
 
 #Main GUI
@@ -36,6 +37,9 @@ class MainGUI(Frame):
         if sound == "key":
             self.sounds = Keyboard
             print("Keyboard")
+         if sound = "strings":
+            self.sounds = Strings
+            print("Strings")
     def playsounds(self,note):
         self.sounds[note].play()
         self.after(2000) #Find a way to implement this that doesn't slow down the whole program.
@@ -127,6 +131,8 @@ class MainGUI(Frame):
             self.key10.invoke()
         def lambs(): #Plays "mary had a little lamb"
             self.key1.invoke()
+        def other(): #Plays "[Something]"
+            pass
 
         self.button4 = Button(self.parent, text = "Stars", fg="teal",command= stars)
         self.button4.grid(row=0,column=1,sticky=N+S+E+W)
