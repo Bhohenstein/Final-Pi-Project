@@ -211,16 +211,66 @@ class MainGUI(Frame):
             self.playsong(11)
             self.playsong(10)
 
-        def abc(): #Plays abcs.
-            pass
+            self.playsong(9)
+            self.playsong(9)
+            self.playsong(8)
+            self.playsong(8)
+
+            self.playsong(8)
+            self.playsong(8)
+            self.playsong(6)
+
+            self.playsong(10)
+            self.playsong(10)
+            self.playsong(10)
+            self.playsong(9)
+            self.playsong(9)
+
+            self.playsong(8)
+            self.playsong(8)
+            self.playsong(8)
+            self.playsong(7)
+
+            self.playsong(6)
+            self.playsong(10)
+            self.playsong(10)
+            self.playsong(10)
+            self.playsong(9)
+            self.playsong(9)
+            self.playsong(9)
+
+            self.playsong(9)
+            self.playsong(8)
+            self.playsong(8)
+            self.playsong(8)
+            self.playsong(7)
+
+            self.playsong(6)
+            self.playsong(6)
+            self.playsong(10)
+            self.playsong(10)
+
+            self.playsong(11)
+            self.playsong(11)
+            self.playsong(11)
+            self.playsong(11)
+            self.playsong(10)
+
+            self.playsong(9)
+            self.playsong(9)
+            self.playsong(8)
+            self.playsong(8)
+
+            self.playsong(7)
+            self.playsong(7)
+            self.playsong(6)
+
 
         self.button4 = Button(self.parent, text = "Stars", fg="teal",command= stars)
         self.button4.grid(row=0,column=1,sticky=N+S+E+W)
         self.button5 = Button(self.parent, text = "Mary", fg="purple",command= lambs)
         self.button5.grid(row=0,column=2,sticky=N+S+E+W)
         self.button6 = Button(self.parent, text = "Sheep", fg="black",command= sheep)
-        self.button6.grid(row=0,column=3,sticky=N+S+E+W)
-        self.button6 = Button(self.parent, text = "ABCs", fg="red",command= abc)
         self.button6.grid(row=0,column=3,sticky=N+S+E+W)
         #######################################################################################
 
