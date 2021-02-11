@@ -18,7 +18,9 @@ Piano = [pygame.mixer.Sound("Piano.ff.C2.aiff"),pygame.mixer.Sound("Piano.mf.Eb2
         ,pygame.mixer.Sound("Piano.mf.Ab1.aiff"),pygame.mixer.Sound("Piano.mf.Gb1.aiff")
         ,pygame.mixer.Sound("Piano.ff.Bb2.aiff"),pygame.mixer.Sound("Piano.mf.Ab3.aiff")
         ,pygame.mixer.Sound("Piano.ff.Bb4.aiff"),pygame.mixer.Sound("Piano.mf.Bb5.aiff")]
+
 Keyboard = []
+
 Strings = [] #Violin and Guitar
 
 
@@ -37,12 +39,18 @@ class MainGUI(Frame):
         if sound == "key":
             self.sounds = Keyboard
             print("Keyboard")
-         if sound = "strings":
+        if sound == ("strings"):
             self.sounds = Strings
             print("Strings")
+            
     def playsounds(self,note):
         self.sounds[note].play()
         self.after(2000) #Find a way to implement this that doesn't slow down the whole program.
+        self.sounds[note].stop()
+
+    def playsong(self,note):
+        self.sounds[note].play()
+        self.after(960) #Find a way to implement this that doesn't slow down the whole program.
         self.sounds[note].stop()
         
         
@@ -58,6 +66,7 @@ class MainGUI(Frame):
         IMenu = Menu(menu)
         IMenu.add_command(label="Piano", command = lambda: self.changesounds("piano"))
         IMenu.add_command(label="Keyboard", command = lambda: self.changesounds("key"))
+        IMenu.add_command(label="Strings", command = lambda: self.changesounds("strings"))
         menu.add_cascade(label="Instruments", menu= IMenu)
 
         
@@ -123,21 +132,96 @@ class MainGUI(Frame):
         #######################################################################################
 
 
+
         #The default songs#####################################################################
         def stars(): #Plays "twinkle twinkle little star"
-            self.key11.invoke()
-            self.key10.invoke()
-            self.key11.invoke()
-            self.key10.invoke()
+            self.playsong(11)
+            self.playsong(10)
+            self.playsong(11)
+            self.playsong(10)
+            self.playsong(11)
+            self.playsong(10)
+            self.playsong(9)
+            sleep(.25)
+            self.playsong(10)
+            self.playsong(9)
+            self.playsong(8)
+            self.playsong(7)
+            self.playsong(6)
+            self.playsong(5)
+            self.playsong(4)
+            sleep(.25)
+            self.playsong(11)
+            self.playsong(10)
+            self.playsong(11)
+            self.playsong(10)
+            self.playsong(9)
+            self.playsong(8)
+            self.playsong(7)
+            sleep(.25)
+            self.playsong(11)
+            self.playsong(10)
+            self.playsong(9)
+            self.playsong(8)
+            self.playsong(9)
+            self.playsong(10)
+            self.playsong(11)
+            
+            
         def lambs(): #Plays "mary had a little lamb"
-            self.key1.invoke()
-        def other(): #Plays "[Something]"
+            self.playsong(10)
+            self.playsong(9)
+            self.playsong(8)
+            self.playsong(9)
+            self.playsong(10)
+            self.playsong(10)
+            self.playsong(10)
+            
+            self.playsong(9)
+            self.playsong(9)
+            self.playsong(9)
+            self.playsong(10)
+            self.playsong(7)
+            self.playsong(7)
+            
+            self.playsong(10)
+            self.playsong(9)
+            self.playsong(8)
+            self.playsong(9)
+            self.playsong(10)
+            self.playsong(10)
+            self.playsong(10)
+
+            self.playsong(10)
+            self.playsong(9)
+            self.playsong(9)
+            self.playsong(10)
+            self.playsong(9)
+            self.playsong(8)
+            
+
+        def sheep(): #Plays black sheep.
+            self.playsong(7)
+            self.playsong(7)
+            self.playsong(10)
+            self.playsong(10)
+
+            self.playsong(11)
+            self.playsong(11)
+            self.playsong(11)
+            self.playsong(10)
+
+        def abc(): #Plays abcs.
             pass
 
         self.button4 = Button(self.parent, text = "Stars", fg="teal",command= stars)
         self.button4.grid(row=0,column=1,sticky=N+S+E+W)
-        self.button5 = Button(self.parent, text = "Mary", fg="purple",command= stars)
+        self.button5 = Button(self.parent, text = "Mary", fg="purple",command= lambs)
         self.button5.grid(row=0,column=2,sticky=N+S+E+W)
+        self.button6 = Button(self.parent, text = "Sheep", fg="black",command= sheep)
+        self.button6.grid(row=0,column=3,sticky=N+S+E+W)
+        self.button6 = Button(self.parent, text = "ABCs", fg="red",command= abc)
+        self.button6.grid(row=0,column=3,sticky=N+S+E+W)
         #######################################################################################
 
 
