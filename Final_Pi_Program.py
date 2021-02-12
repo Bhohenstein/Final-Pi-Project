@@ -21,6 +21,8 @@ Piano = [pygame.mixer.Sound("Piano.ff.C2.aiff"),pygame.mixer.Sound("Piano.mf.Eb2
 
 Keyboard = []
 
+Perc = [pygame.mixer.Sound("Basic_Rock_135.mp3"),pygame.mixer.Sound("Cymbal_Groove.mp3")] 
+
 Strings = [] #Violin and Guitar
 
 
@@ -42,6 +44,9 @@ class MainGUI(Frame):
         if sound == ("strings"):
             self.sounds = Strings
             print("Strings")
+        if sound == ("perc"):
+            self.sounds = Perc
+            print("Percussion")
             
     def playsounds(self,note):
         self.sounds[note].play()
@@ -50,7 +55,7 @@ class MainGUI(Frame):
 
     def playsong(self,note):
         self.sounds[note].play()
-        self.after(960) 
+        self.after(960) #Find a way to implement this that doesn't slow down the whole program.
         self.sounds[note].stop()
         
         
@@ -66,6 +71,7 @@ class MainGUI(Frame):
         IMenu = Menu(menu)
         IMenu.add_command(label="Piano", command = lambda: self.changesounds("piano"))
         IMenu.add_command(label="Keyboard", command = lambda: self.changesounds("key"))
+        IMenu.add_command(label="Percussion", command = lambda: self.changesounds("perc"))
         IMenu.add_command(label="Strings", command = lambda: self.changesounds("strings"))
         menu.add_cascade(label="Instruments", menu= IMenu)
 
