@@ -82,59 +82,59 @@ class MainGUI(Frame):
         #the ipadx and ipady control how big the keys are, these will probably need to be tested and changed for the PI's screen.
         #White Keys:
         self.key1 = Button(self.parent, bg="white",command = lambda: self.playsounds(0))
-        self.key1.grid(row=1,column=1,ipadx=30,ipady=100)
+        self.key1.grid(row=1,column=1,ipadx=15,ipady=100)
 
         self.key3 = Button(self.parent, bg="white",command = lambda: self.playsounds(1))
-        self.key3.grid(row=1,column=2,ipadx=30,ipady=100)
+        self.key3.grid(row=1,column=2,ipadx=15,ipady=100)
 
         self.key4 = Button(self.parent, bg="white",command = lambda: self.playsounds(2))
-        self.key4.grid(row=1,column=3,ipadx=30,ipady=100)
+        self.key4.grid(row=1,column=3,ipadx=15,ipady=100)
 
         self.key6 = Button(self.parent, bg="white",command = lambda: self.playsounds(3))
-        self.key6.grid(row=1,column=4,ipadx=30,ipady=100)
+        self.key6.grid(row=1,column=4,ipadx=15,ipady=100)
 
         self.key7 = Button(self.parent, bg="white",command = lambda: self.playsounds(4))
-        self.key7.grid(row=1,column=5,ipadx=30,ipady=100)
+        self.key7.grid(row=1,column=5,ipadx=15,ipady=100)
 
         self.key8 = Button(self.parent, bg="white",command = lambda: self.playsounds(5))
-        self.key8.grid(row=1,column=6,ipadx=30,ipady=100)
+        self.key8.grid(row=1,column=6,ipadx=15,ipady=100)
 
         self.key9 = Button(self.parent, bg="white",command = lambda: self.playsounds(6))
-        self.key9.grid(row=1,column=7,ipadx=30,ipady=100)
+        self.key9.grid(row=1,column=7,ipadx=15,ipady=100)
 
         self.key11 = Button(self.parent, bg="white",command = lambda: self.playsounds(7))
-        self.key11.grid(row=1,column=8,ipadx=30,ipady=100)
+        self.key11.grid(row=1,column=8,ipadx=15,ipady=100)
 
         self.key12 = Button(self.parent, bg="white",command = lambda: self.playsounds(8))
-        self.key12.grid(row=1,column=9,ipadx=30,ipady=100)
+        self.key12.grid(row=1,column=9,ipadx=15,ipady=100)
 
         self.key14 = Button(self.parent, bg="white",command = lambda: self.playsounds(9))
-        self.key14.grid(row=1,column=10,ipadx=30,ipady=100)
+        self.key14.grid(row=1,column=10,ipadx=15,ipady=100)
 
         self.key15 = Button(self.parent, bg="white",command = lambda: self.playsounds(10))
-        self.key15.grid(row=1,column=11,ipadx=30,ipady=100)
+        self.key15.grid(row=1,column=11,ipadx=15,ipady=100)
 
         self.key17 = Button(self.parent, bg="white",command = lambda: self.playsounds(11))
-        self.key17.grid(row=1,column=12,ipadx=30,ipady=100)
+        self.key17.grid(row=1,column=12,ipadx=15,ipady=100)
 
         #Black Keys:
         self.key2 = Button(self.parent, bg="black",command = lambda: self.playsounds(12))
-        self.key2.grid(row=1,column=1,columnspan=2,ipadx=30,ipady=55,sticky= N)
+        self.key2.grid(row=1,column=1,columnspan=2,ipadx=15,ipady=55,sticky= N)
     
         self.key5 = Button(self.parent, bg="black",command = lambda: self.playsounds(13))
-        self.key5.grid(row=1,column=3,columnspan=2,ipadx=30,ipady=55,sticky= N)
+        self.key5.grid(row=1,column=3,columnspan=2,ipadx=15,ipady=55,sticky= N)
         
         self.key7 = Button(self.parent, bg="black",command = lambda: self.playsounds(14))
-        self.key7.grid(row=1,column=5,columnspan=2,ipadx=30,ipady=55,sticky= N)
+        self.key7.grid(row=1,column=5,columnspan=2,ipadx=15,ipady=55,sticky= N)
     
         self.key10 = Button(self.parent, bg="black",command = lambda: self.playsounds(15))
-        self.key10.grid(row=1,column=7,columnspan=2,ipadx=30,ipady=55,sticky= N)
+        self.key10.grid(row=1,column=7,columnspan=2,ipadx=15,ipady=55,sticky= N)
 
         self.key13 = Button(self.parent, bg="black",command = lambda: self.playsounds(16))
-        self.key13.grid(row=1,column=9,columnspan=2,ipadx=30,ipady=55,sticky= N)
+        self.key13.grid(row=1,column=9,columnspan=2,ipadx=15,ipady=55,sticky= N)
 
         self.key16 = Button(self.parent, bg="black",command = lambda: self.playsounds(17))
-        self.key16.grid(row=1,column=11,columnspan=2,ipadx=30,ipady=55,sticky= N)
+        self.key16.grid(row=1,column=11,columnspan=2,ipadx=15,ipady=55,sticky= N)
         #######################################################################################
 
 
