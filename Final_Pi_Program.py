@@ -50,7 +50,7 @@ class MainGUI(Frame):
 
     def playsong(self,note):
         self.sounds[note].play()
-        self.after(960) #Find a way to implement this that doesn't slow down the whole program.
+        self.after(960) 
         self.sounds[note].stop()
         
         
