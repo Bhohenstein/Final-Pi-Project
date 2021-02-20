@@ -8,16 +8,21 @@ from time import sleep
 import pygame
 
 pygame.init()
-Piano = [pygame.mixer.Sound("Piano.ff.C2.aiff"),pygame.mixer.Sound("Piano.mf.Eb2.aiff") #White Keys
-         ,pygame.mixer.Sound("Piano.ff.F1.aiff"),pygame.mixer.Sound("Piano.mf.d3.aiff")
-         ,pygame.mixer.Sound("Piano.mf.D4.aiff"),pygame.mixer.Sound("Piano.mf.F4.aiff")
-         ,pygame.mixer.Sound("Piano.mf.B4.aiff"),pygame.mixer.Sound("Piano.mf.C5.aiff")
-         ,pygame.mixer.Sound("Piano.mf.E5.aiff"),pygame.mixer.Sound("Piano.mf.G5.aiff")
-         ,pygame.mixer.Sound("Piano.mf.C6.aiff"),pygame.mixer.Sound("Piano.mf.G6.aiff")
+Piano = [pygame.mixer.Sound("c2.aiff"),pygame.mixer.Sound("d2.aiff") #White Keys
+         ,pygame.mixer.Sound("e2.aiff"),pygame.mixer.Sound("f2.aiff")
+         ,pygame.mixer.Sound("g2.aiff"),pygame.mixer.Sound("a2.aiff")
+         ,pygame.mixer.Sound("b2.aiff"),pygame.mixer.Sound("c4.aiff")
+         ,pygame.mixer.Sound("d4.aiff"),pygame.mixer.Sound("e4.aiff")
+         ,pygame.mixer.Sound("f4.aiff"),pygame.mixer.Sound("g4.aiff")
+         ,pygame.mixer.Sound("a4.aiff"),pygame.mixer.Sound("b4.aiff")
          #Black Keys
-        ,pygame.mixer.Sound("Piano.mf.Ab1.aiff"),pygame.mixer.Sound("Piano.mf.Gb1.aiff")
-        ,pygame.mixer.Sound("Piano.ff.Bb2.aiff"),pygame.mixer.Sound("Piano.mf.Ab3.aiff")
-        ,pygame.mixer.Sound("Piano.ff.Bb4.aiff"),pygame.mixer.Sound("Piano.mf.Bb5.aiff")]
+        ,pygame.mixer.Sound("Db2.aiff"),pygame.mixer.Sound("Eb2.aiff")
+        ,pygame.mixer.Sound("F#2.aiff"),pygame.mixer.Sound("Ab2.aiff")
+        ,pygame.mixer.Sound("Bb2.aiff"),pygame.mixer.Sound("Db4.aiff")
+        ,pygame.mixer.Sound("Eb4.aiff"),pygame.mixer.Sound("F#4.aiff")
+        ,pygame.mixer.Sound("Ab4.aiff"),pygame.mixer.Sound("Bb4.aiff")]
+
+
 
 Keyboard = []
 
@@ -47,15 +52,18 @@ class MainGUI(Frame):
         if sound == ("perc"):
             self.sounds = Perc
             print("Percussion")
-            
+
+    
     def playsounds(self,note):
         self.sounds[note].play()
-        self.after(2000) #Find a way to implement this that doesn't slow down the whole program.
-        self.sounds[note].stop()
+        self.after(500) #Find a way to implement this that doesn't slow down the whole program.
+        
+
+        
 
     def playsong(self,note):
         self.sounds[note].play()
-        self.after(960) #Find a way to implement this that doesn't slow down the whole program.
+        self.after(775) #Find a way to implement this that doesn't slow down the whole program.
         self.sounds[note].stop()
         
         
@@ -87,91 +95,128 @@ class MainGUI(Frame):
         self.key3 = Button(self.parent, bg="white",command = lambda: self.playsounds(1))
         self.key3.grid(row=1,column=2,ipadx=15,ipady=100)
 
-        self.key4 = Button(self.parent, bg="white",command = lambda: self.playsounds(2))
-        self.key4.grid(row=1,column=3,ipadx=15,ipady=100)
+        self.key5 = Button(self.parent, bg="white",command = lambda: self.playsounds(2))
+        self.key5.grid(row=1,column=3,ipadx=15,ipady=100)
 
         self.key6 = Button(self.parent, bg="white",command = lambda: self.playsounds(3))
         self.key6.grid(row=1,column=4,ipadx=15,ipady=100)
 
-        self.key7 = Button(self.parent, bg="white",command = lambda: self.playsounds(4))
-        self.key7.grid(row=1,column=5,ipadx=15,ipady=100)
+        self.key8 = Button(self.parent, bg="white",command = lambda: self.playsounds(4))
+        self.key8.grid(row=1,column=5,ipadx=15,ipady=100)
 
-        self.key8 = Button(self.parent, bg="white",command = lambda: self.playsounds(5))
-        self.key8.grid(row=1,column=6,ipadx=15,ipady=100)
+        self.key10 = Button(self.parent, bg="white",command = lambda: self.playsounds(5))
+        self.key10.grid(row=1,column=6,ipadx=15,ipady=100)
 
-        self.key9 = Button(self.parent, bg="white",command = lambda: self.playsounds(6))
-        self.key9.grid(row=1,column=7,ipadx=15,ipady=100)
+        self.key12 = Button(self.parent, bg="white",command = lambda: self.playsounds(6))
+        self.key12.grid(row=1,column=7,ipadx=15,ipady=100)
 
-        self.key11 = Button(self.parent, bg="white",command = lambda: self.playsounds(7))
-        self.key11.grid(row=1,column=8,ipadx=15,ipady=100)
+        self.key13 = Button(self.parent, bg="white",command = lambda: self.playsounds(7))
+        self.key13.grid(row=1,column=8,ipadx=15,ipady=100)
 
-        self.key12 = Button(self.parent, bg="white",command = lambda: self.playsounds(8))
-        self.key12.grid(row=1,column=9,ipadx=15,ipady=100)
+        self.key15 = Button(self.parent, bg="white",command = lambda: self.playsounds(8))
+        self.key15.grid(row=1,column=9,ipadx=15,ipady=100)
 
-        self.key14 = Button(self.parent, bg="white",command = lambda: self.playsounds(9))
-        self.key14.grid(row=1,column=10,ipadx=15,ipady=100)
+        self.key17 = Button(self.parent, bg="white",command = lambda: self.playsounds(9))
+        self.key17.grid(row=1,column=10,ipadx=15,ipady=100)
 
-        self.key15 = Button(self.parent, bg="white",command = lambda: self.playsounds(10))
-        self.key15.grid(row=1,column=11,ipadx=15,ipady=100)
+        self.key18 = Button(self.parent, bg="white",command = lambda: self.playsounds(10))
+        self.key18.grid(row=1,column=11,ipadx=15,ipady=100)
 
-        self.key17 = Button(self.parent, bg="white",command = lambda: self.playsounds(11))
-        self.key17.grid(row=1,column=12,ipadx=15,ipady=100)
+        self.key20 = Button(self.parent, bg="white",command = lambda: self.playsounds(11))
+        self.key20.grid(row=1,column=12,ipadx=15,ipady=100)
+
+        self.key22 = Button(self.parent, bg="white",command = lambda: self.playsounds(12))
+        self.key22.grid(row=1,column=13,ipadx=15,ipady=100)
+
+        self.key24 = Button(self.parent, bg="white",command = lambda: self.playsounds(13))
+        self.key24.grid(row=1,column=14,ipadx=15,ipady=100)
+
+
 
         #Black Keys:
-        self.key2 = Button(self.parent, bg="black",command = lambda: self.playsounds(12))
-        self.key2.grid(row=1,column=1,columnspan=2,ipadx=15,ipady=55,sticky= N)
+        self.key2 = Button(self.parent, bg="black",command = lambda: self.playsounds(14))
+        self.key2.grid(row=1,column=1,columnspan=2,ipadx=10,ipady=55,sticky= N)
     
-        self.key5 = Button(self.parent, bg="black",command = lambda: self.playsounds(13))
-        self.key5.grid(row=1,column=3,columnspan=2,ipadx=15,ipady=55,sticky= N)
+        self.key4 = Button(self.parent, bg="black",command = lambda: self.playsounds(15))
+        self.key4.grid(row=1,column=2,columnspan=2,ipadx=10,ipady=55,sticky= N)
         
-        self.key7 = Button(self.parent, bg="black",command = lambda: self.playsounds(14))
-        self.key7.grid(row=1,column=5,columnspan=2,ipadx=15,ipady=55,sticky= N)
+        self.key7 = Button(self.parent, bg="black",command = lambda: self.playsounds(16))
+        self.key7.grid(row=1,column=4,columnspan=2,ipadx=10,ipady=55,sticky= N)
     
-        self.key10 = Button(self.parent, bg="black",command = lambda: self.playsounds(15))
-        self.key10.grid(row=1,column=7,columnspan=2,ipadx=15,ipady=55,sticky= N)
+        self.key9 = Button(self.parent, bg="black",command = lambda: self.playsounds(17))
+        self.key9.grid(row=1,column=5,columnspan=2,ipadx=10,ipady=55,sticky= N)
 
-        self.key13 = Button(self.parent, bg="black",command = lambda: self.playsounds(16))
-        self.key13.grid(row=1,column=9,columnspan=2,ipadx=15,ipady=55,sticky= N)
+        self.key11 = Button(self.parent, bg="black",command = lambda: self.playsounds(18))
+        self.key11.grid(row=1,column=6,columnspan=2,ipadx=10,ipady=55,sticky= N)
 
-        self.key16 = Button(self.parent, bg="black",command = lambda: self.playsounds(17))
-        self.key16.grid(row=1,column=11,columnspan=2,ipadx=15,ipady=55,sticky= N)
+        self.key14 = Button(self.parent, bg="black",command = lambda: self.playsounds(19))
+        self.key14.grid(row=1,column=8,columnspan=2,ipadx=10,ipady=55,sticky= N)
+
+        self.key16 = Button(self.parent, bg="black",command = lambda: self.playsounds(20))
+        self.key16.grid(row=1,column=9,columnspan=2,ipadx=10,ipady=55,sticky= N)
+
+        self.key19 = Button(self.parent, bg="black",command = lambda: self.playsounds(21))
+        self.key19.grid(row=1,column=11,columnspan=2,ipadx=10,ipady=55,sticky= N)
+
+        self.key21 = Button(self.parent, bg="black",command = lambda: self.playsounds(22))
+        self.key21.grid(row=1,column=12,columnspan=2,ipadx=10,ipady=55,sticky= N)
+
+        self.key23 = Button(self.parent, bg="black",command = lambda: self.playsounds(23))
+        self.key23.grid(row=1,column=13,columnspan=2,ipadx=10,ipady=55,sticky= N)
         #######################################################################################
 
 
 
         #The default songs#####################################################################
         def stars(): #Plays "twinkle twinkle little star"
+            self.playsong(7)
+            self.playsong(7)
             self.playsong(11)
+            self.playsong(11)
+            self.playsong(12)
+            self.playsong(12)
+            self.playsong(11)
+            sleep(.75)
             self.playsong(10)
-            self.playsong(11)
-            self.playsong(10)
-            self.playsong(11)
             self.playsong(10)
             self.playsong(9)
-            sleep(.25)
-            self.playsong(10)
             self.playsong(9)
+            self.playsong(8)
             self.playsong(8)
             self.playsong(7)
-            self.playsong(6)
-            self.playsong(5)
-            self.playsong(4)
-            sleep(.25)
+            sleep(.75)
+            self.playsong(11)
             self.playsong(11)
             self.playsong(10)
-            self.playsong(11)
             self.playsong(10)
             self.playsong(9)
+            self.playsong(9)
+            self.playsong(8)
+            sleep(.75)
+            self.playsong(11)
+            self.playsong(11)
+            self.playsong(10)
+            self.playsong(10)
+            self.playsong(9)
+            self.playsong(9)
+            self.playsong(8)
+            sleep(.75)
+            self.playsong(7)
+            self.playsong(7)
+            self.playsong(11)
+            self.playsong(11)
+            self.playsong(12)
+            self.playsong(12)
+            self.playsong(11)
+            sleep(.75)
+            self.playsong(10)
+            self.playsong(10)
+            self.playsong(9)
+            self.playsong(9)
+            self.playsong(8)
             self.playsong(8)
             self.playsong(7)
-            sleep(.25)
-            self.playsong(11)
-            self.playsong(10)
-            self.playsong(9)
-            self.playsong(8)
-            self.playsong(9)
-            self.playsong(10)
-            self.playsong(11)
+            sleep(.75)
             
             
         def lambs(): #Plays "mary had a little lamb"
@@ -182,14 +227,14 @@ class MainGUI(Frame):
             self.playsong(10)
             self.playsong(10)
             self.playsong(10)
-            
+            sleep(.5)
             self.playsong(9)
             self.playsong(9)
             self.playsong(9)
             self.playsong(10)
             self.playsong(7)
             self.playsong(7)
-            
+            sleep(.5)
             self.playsong(10)
             self.playsong(9)
             self.playsong(8)
@@ -197,7 +242,7 @@ class MainGUI(Frame):
             self.playsong(10)
             self.playsong(10)
             self.playsong(10)
-
+            sleep(.5)
             self.playsong(10)
             self.playsong(9)
             self.playsong(9)
