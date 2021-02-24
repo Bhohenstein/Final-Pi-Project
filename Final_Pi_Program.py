@@ -6,7 +6,7 @@
 from tkinter import *
 from time import sleep
 import pygame
-
+                
 pygame.init()
 Piano = [pygame.mixer.Sound("c2.aiff"),pygame.mixer.Sound("d2.aiff") #White Keys
          ,pygame.mixer.Sound("e2.aiff"),pygame.mixer.Sound("f2.aiff")
@@ -38,9 +38,6 @@ Xylophone = [pygame.mixer.Sound("c2xylo.aiff"),pygame.mixer.Sound("d2xylo.aiff")
             ,pygame.mixer.Sound("Eb4xylo.aiff"),pygame.mixer.Sound("F#4xylo.aiff")
             ,pygame.mixer.Sound("Ab4xylo.aiff"),pygame.mixer.Sound("Bb4xylo.aiff")]
 
-Perc = [pygame.mixer.Sound("Basic_Rock_135.mp3"),pygame.mixer.Sound("Cymbal_Groove.mp3")] 
-
-Strings = [] #Violin and Guitar
 
 
 #Main GUI
@@ -91,8 +88,6 @@ class MainGUI(Frame):
         IMenu = Menu(menu)
         IMenu.add_command(label="Piano", command = lambda: self.changesounds("piano"))
         IMenu.add_command(label="Xylophone", command = lambda: self.changesounds("xylo"))
-        IMenu.add_command(label="Percussion", command = lambda: self.changesounds("perc"))
-        IMenu.add_command(label="Strings", command = lambda: self.changesounds("strings"))
         menu.add_cascade(label="Instruments", menu= IMenu)
 
         
@@ -263,103 +258,57 @@ class MainGUI(Frame):
             self.playsong(7)
             
 
-        def sheep(): #Plays black sheep.
+        def ABC(): #Plays Alphabet song
             self.playsong(7)
             self.playsong(7)
             self.playsong(11)
             self.playsong(11)
-
-            self.playsong(12)
-            self.playsong(12)
             self.playsong(12)
             self.playsong(12)
             self.playsong(11)
-
+            sleep(.75)
             self.playsong(10)
             self.playsong(10)
-            self.playsong(9)
-            self.playsong(9)
-
-            self.playsong(8)
-            self.playsong(8)
-            self.playsong(7)
-
-            self.playsong(11)
-            self.playsong(11)
-            self.playsong(11)
-            self.playsong(10)
-            self.playsong(10)
-
-            self.playsong(9)
             self.playsong(9)
             self.playsong(9)
             self.playsong(8)
-
-            self.playsong(7)
-            self.playsong(11)
-            self.playsong(11)
-            self.playsong(11)
-            self.playsong(10)
-            self.playsong(10)
-            self.playsong(10)
-
-            self.playsong(10)
-            self.playsong(9)
-            self.playsong(9)
-            self.playsong(9)
             self.playsong(8)
-
-            self.playsong(7)
-            self.playsong(7)
-            self.playsong(11)
-            self.playsong(11)
-
-            self.playsong(12)
-            self.playsong(12)
-            self.playsong(12)
-            self.playsong(12)
-            self.playsong(11)
-
-            self.playsong(10)
-            self.playsong(10)
-            self.playsong(9)
-            self.playsong(9)
-
             self.playsong(8)
             self.playsong(8)
             self.playsong(7)
-
-        def HBD(): #Plays happy birthday song
+            sleep(.75)
             self.playsong(11)
             self.playsong(11)
-            self.playsong(12)
-            self.playsong(11)
-            self.playsong(7)
-            self.playsong(13)
+            self.playsong(10)
+            self.playsong(9)
+            self.playsong(9)
+            self.playsong(8)
             sleep(.5)
             self.playsong(11)
             self.playsong(11)
-            self.playsong(12)
-            self.playsong(11)
+            self.playsong(10)
+            self.playsong(9)
+            self.playsong(9)
             self.playsong(8)
+            sleep(.75)
             self.playsong(7)
-            sleep(.5)
-            self.playsong(11)
-            self.playsong(11)
-            self.playsong(11)
-            self.playsong(9)
             self.playsong(7)
-            self.playsong(13)
+            self.playsong(11)
+            self.playsong(11)
             self.playsong(12)
-            sleep(.5)
+            self.playsong(12)
+            self.playsong(11)
+            sleep(.75)
             self.playsong(10)
             self.playsong(10)
             self.playsong(9)
-            self.playsong(7)
+            self.playsong(9)
+            self.playsong(8)
             self.playsong(8)
             self.playsong(7)
             
-
+            
+            
 
 
 
@@ -367,10 +316,8 @@ class MainGUI(Frame):
         self.button4.grid(row=0,column=1,sticky=N+S+E+W)
         self.button5 = Button(self.parent, text = "Mary", fg="purple",command= lambs)
         self.button5.grid(row=0,column=2,sticky=N+S+E+W)
-        self.button6 = Button(self.parent, text = "Sheep", fg="black",command= sheep)
-        self.button6.grid(row=0,column=3,sticky=N+S+E+W)
-        self.button7 = Button(self.parent, text = "HBD", fg="red",command= HBD)
-        self.button7.grid(row=0,column=4,sticky=N+S+E+W)
+        self.button6 = Button(self.parent, text = "ABC", fg="red",command= HBD)
+        self.button6.grid(row=0,column=4,sticky=N+S+E+W)
         #######################################################################################
 
 
