@@ -24,7 +24,19 @@ Piano = [pygame.mixer.Sound("c2.aiff"),pygame.mixer.Sound("d2.aiff") #White Keys
 
 
 
-Keyboard = []
+Xylophone = [pygame.mixer.Sound("c2xylo.aiff"),pygame.mixer.Sound("d2xylo.aiff") #White Keys
+             ,pygame.mixer.Sound("e2xylo.aiff"),pygame.mixer.Sound("f2xylo.aiff")
+             ,pygame.mixer.Sound("g2xylo.aiff"),pygame.mixer.Sound("a2xylo.aiff")
+             ,pygame.mixer.Sound("b2xylo.aiff"),pygame.mixer.Sound("c4xylo.aiff")
+             ,pygame.mixer.Sound("d4xylo.aiff"),pygame.mixer.Sound("e4xylo.aiff")
+             ,pygame.mixer.Sound("f4xylo.aiff"),pygame.mixer.Sound("g4xylo.aiff")
+             ,pygame.mixer.Sound("a4xylo.aiff"),pygame.mixer.Sound("b4xylo.aiff")
+             #Black Keys
+            ,pygame.mixer.Sound("Db2xylo.aiff"),pygame.mixer.Sound("Eb2xylo.aiff")
+            ,pygame.mixer.Sound("F#2xylo.aiff"),pygame.mixer.Sound("Ab2xylo.aiff")
+            ,pygame.mixer.Sound("Bb2xylo.aiff"),pygame.mixer.Sound("Db4xylo.aiff")
+            ,pygame.mixer.Sound("Eb4xylo.aiff"),pygame.mixer.Sound("F#4xylo.aiff")
+            ,pygame.mixer.Sound("Ab4xylo.aiff"),pygame.mixer.Sound("Bb4xylo.aiff")]
 
 Perc = [pygame.mixer.Sound("Basic_Rock_135.mp3"),pygame.mixer.Sound("Cymbal_Groove.mp3")] 
 
@@ -43,9 +55,9 @@ class MainGUI(Frame):
         if sound == "piano":
             self.sounds = Piano
             print("Piano")
-        if sound == "key":
-            self.sounds = Keyboard
-            print("Keyboard")
+        if sound == "xylo":
+            self.sounds = Xylophone
+            print("Xylophone")
         if sound == ("strings"):
             self.sounds = Strings
             print("Strings")
@@ -63,7 +75,7 @@ class MainGUI(Frame):
 
     def playsong(self,note):
         self.sounds[note].play()
-        self.after(775) #Find a way to implement this that doesn't slow down the whole program.
+        self.after(780) #Find a way to implement this that doesn't slow down the whole program.
         self.sounds[note].stop()
         
         
@@ -78,7 +90,7 @@ class MainGUI(Frame):
 
         IMenu = Menu(menu)
         IMenu.add_command(label="Piano", command = lambda: self.changesounds("piano"))
-        IMenu.add_command(label="Keyboard", command = lambda: self.changesounds("key"))
+        IMenu.add_command(label="Xylophone", command = lambda: self.changesounds("xylo"))
         IMenu.add_command(label="Percussion", command = lambda: self.changesounds("perc"))
         IMenu.add_command(label="Strings", command = lambda: self.changesounds("strings"))
         menu.add_cascade(label="Instruments", menu= IMenu)
@@ -220,101 +232,135 @@ class MainGUI(Frame):
             
             
         def lambs(): #Plays "mary had a little lamb"
-            self.playsong(10)
             self.playsong(9)
             self.playsong(8)
-            self.playsong(9)
-            self.playsong(10)
-            self.playsong(10)
-            self.playsong(10)
-            sleep(.5)
-            self.playsong(9)
-            self.playsong(9)
-            self.playsong(9)
-            self.playsong(10)
             self.playsong(7)
+            self.playsong(8)
+            self.playsong(9)
+            self.playsong(9)
+            self.playsong(9)
+            sleep(.5)
+            self.playsong(8)
+            self.playsong(8)
+            self.playsong(8)
+            self.playsong(9)
+            self.playsong(11)
+            self.playsong(11)
+            sleep(.5)
+            self.playsong(9)
+            self.playsong(8)
             self.playsong(7)
-            sleep(.5)
-            self.playsong(10)
-            self.playsong(9)
             self.playsong(8)
             self.playsong(9)
-            self.playsong(10)
-            self.playsong(10)
-            self.playsong(10)
+            self.playsong(9)
+            self.playsong(9)
             sleep(.5)
-            self.playsong(10)
-            self.playsong(9)
-            self.playsong(9)
-            self.playsong(10)
             self.playsong(9)
             self.playsong(8)
+            self.playsong(8)
+            self.playsong(9)
+            self.playsong(8)
+            self.playsong(7)
             
 
         def sheep(): #Plays black sheep.
             self.playsong(7)
             self.playsong(7)
-            self.playsong(10)
-            self.playsong(10)
-
             self.playsong(11)
             self.playsong(11)
+
+            self.playsong(12)
+            self.playsong(12)
+            self.playsong(12)
+            self.playsong(12)
             self.playsong(11)
-            self.playsong(10)
 
-            self.playsong(9)
-            self.playsong(9)
-            self.playsong(8)
-            self.playsong(8)
-
-            self.playsong(8)
-            self.playsong(8)
-            self.playsong(6)
-
-            self.playsong(10)
             self.playsong(10)
             self.playsong(10)
             self.playsong(9)
             self.playsong(9)
 
-            self.playsong(8)
             self.playsong(8)
             self.playsong(8)
             self.playsong(7)
 
-            self.playsong(6)
+            self.playsong(11)
+            self.playsong(11)
+            self.playsong(11)
             self.playsong(10)
             self.playsong(10)
-            self.playsong(10)
-            self.playsong(9)
-            self.playsong(9)
-            self.playsong(9)
 
             self.playsong(9)
+            self.playsong(9)
+            self.playsong(9)
             self.playsong(8)
-            self.playsong(8)
-            self.playsong(8)
+
             self.playsong(7)
-
-            self.playsong(6)
-            self.playsong(6)
-            self.playsong(10)
-            self.playsong(10)
-
-            self.playsong(11)
             self.playsong(11)
             self.playsong(11)
             self.playsong(11)
             self.playsong(10)
+            self.playsong(10)
+            self.playsong(10)
 
+            self.playsong(10)
             self.playsong(9)
             self.playsong(9)
-            self.playsong(8)
+            self.playsong(9)
             self.playsong(8)
 
             self.playsong(7)
             self.playsong(7)
-            self.playsong(6)
+            self.playsong(11)
+            self.playsong(11)
+
+            self.playsong(12)
+            self.playsong(12)
+            self.playsong(12)
+            self.playsong(12)
+            self.playsong(11)
+
+            self.playsong(10)
+            self.playsong(10)
+            self.playsong(9)
+            self.playsong(9)
+
+            self.playsong(8)
+            self.playsong(8)
+            self.playsong(7)
+
+        def HBD(): #Plays happy birthday song
+            self.playsong(11)
+            self.playsong(11)
+            self.playsong(12)
+            self.playsong(11)
+            self.playsong(7)
+            self.playsong(13)
+            sleep(.5)
+            self.playsong(11)
+            self.playsong(11)
+            self.playsong(12)
+            self.playsong(11)
+            self.playsong(8)
+            self.playsong(7)
+            sleep(.5)
+            self.playsong(11)
+            self.playsong(11)
+            self.playsong(11)
+            self.playsong(9)
+            self.playsong(7)
+            self.playsong(13)
+            self.playsong(12)
+            sleep(.5)
+            self.playsong(10)
+            self.playsong(10)
+            self.playsong(9)
+            self.playsong(7)
+            self.playsong(8)
+            self.playsong(7)
+            
+
+
 
 
         self.button4 = Button(self.parent, text = "Stars", fg="teal",command= stars)
@@ -323,6 +369,8 @@ class MainGUI(Frame):
         self.button5.grid(row=0,column=2,sticky=N+S+E+W)
         self.button6 = Button(self.parent, text = "Sheep", fg="black",command= sheep)
         self.button6.grid(row=0,column=3,sticky=N+S+E+W)
+        self.button7 = Button(self.parent, text = "HBD", fg="red",command= HBD)
+        self.button7.grid(row=0,column=4,sticky=N+S+E+W)
         #######################################################################################
 
 
